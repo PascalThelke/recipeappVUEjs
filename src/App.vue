@@ -13,9 +13,8 @@
 </script>
 
 <style>
-body {
-  margin: 0;
-}
+@import '../public/styles.scss';
+
 
 input{
   border: 0;
@@ -23,4 +22,5 @@ input{
   width: 100%;
   height: 40px;
 }
+
 </style>
