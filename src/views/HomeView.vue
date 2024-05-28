@@ -12,6 +12,14 @@ import RecipeItem from '@/components/RecipeItem.vue';
 export default {
   components: {
     RecipeItem
+  },
+  data(){
+    recipes : [];
+  },
+  methods: {
+    getRecipes(){
+      const url = ``;
+    }
   }
 }
 </script>

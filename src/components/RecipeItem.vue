@@ -35,10 +35,10 @@ export default {
     margin: 8px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 8px;
     cursor: pointer;
-
+    font-size: 22px;
     &:hover {
         background-color: rgba(0, 0, 0, 0.1)
     }
