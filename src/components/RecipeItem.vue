@@ -36,7 +36,7 @@ export default {
     border-radius: 8px;
     display: flex;
     /* align-items: center; */
-    gap: 8px;
+    gap: 4px;
     cursor: pointer;
     font-size: 22px;
     &:hover {
