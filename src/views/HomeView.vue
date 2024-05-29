@@ -1,9 +1,7 @@
 <template>
-  <RecipeItem />
-  <RecipeItem />
-  <RecipeItem />
-  <RecipeItem />
-  <RecipeItem />
+  <RecipeItem :image="recipe.recipe.image" :label="recipe.recipe.label"
+    :attributes="recipe.recipe.dietLabels.join(', ')" :url="recipe.recipe.url" v-for="recipe in recipes" />
+
 </template>
 
 <script>
@@ -14,7 +12,9 @@ export default {
     RecipeItem
   },
   data() {
-    recipes: [];
+    return {
+      recipes: []
+    }
   },
   methods: {
     async getRecipes() {
@@ -23,11 +23,11 @@ export default {
       const appKey = 'f6d41212deced4dd72c68413b5f8014a';
       const url = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
       let response = await fetch(url);
-      this.recipes = await response.json();
+      this.recipes = (await response.json()).hits;
       console.log(this.recipes);
     }
   },
-  mounted(){
+  mounted() {
     this.getRecipes();
   }
 }

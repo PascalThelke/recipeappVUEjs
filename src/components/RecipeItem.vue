@@ -1,6 +1,6 @@
 <template>
-    <div class="recipe_container">
-        <img class="recipe_item_image" :src="foodImage">
+    <a :href="url" class="recipe_container">
+        <img class="recipe_item_image" :src="image">
         <div class="right_half">
             <div>
                 {{ label }}
@@ -9,22 +9,20 @@
                 {{ attributes }}
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script>
+
 export default {
     name: 'RecipeItem',
-    data() {
-        return {
-            foodImage: require('@/assets/logo.png'),
-            label: 'Sushi-Rolls',
-            attributes: 'Vegan, Fettarm '
-        };
+    props: {
+        image: String,
+        label: String,
+        attributes: String,
+        url: String,
     }
 }
-
-
 
 </script>
 
@@ -36,9 +34,11 @@ export default {
     border-radius: 8px;
     display: flex;
     /* align-items: center; */
-    gap: 4px;
+    gap: 8px;
     cursor: pointer;
     font-size: 22px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
     &:hover {
         background-color: rgba(0, 0, 0, 0.1)
     }
@@ -47,7 +47,7 @@ export default {
 .right_half {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 
 .bottom_row{
@@ -57,5 +57,6 @@ export default {
 
 .recipe_item_image {
     height: 72px;
+    border-radius: 8px;
 }
 </style>
