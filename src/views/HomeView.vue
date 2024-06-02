@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header @update-query="getRecipes" />
+    <HeaderComponent @update-query="getRecipes" />
     <RecipeItem
       v-for="recipe in recipes"
       :key="recipe.recipe.label"
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
 import RecipeItem from '@/components/RecipeItem.vue';
 
 export default {
   components: {
-    Header,
+    HeaderComponent,
     RecipeItem
   },
   data() {
